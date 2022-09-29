@@ -7,8 +7,8 @@ import { useNavigation } from "@react-navigation/native";
 import { SCREEN } from "../../navigation/constants/screens";
 
 const Films = () => {
-  const navigation = useNavigation();
-  const { data: films, isLoading, error } = useFetchFilmsQuery("");
+  const { navigate } = useNavigation();
+  const { data: films, error, isLoading } = useFetchFilmsQuery("");
 
   return isLoading ? (
     <Preloader title={"Loading..."} />
@@ -19,8 +19,8 @@ const Films = () => {
         <View>
           {films && films.results.map((film) => {
             return (
-              <View style={styles.filmItem} key={film.episode_id}>
-                <Pressable onPress={() => navigation?.navigate(SCREEN.FILM_DETAILS)}>
+              <View style={styles.filmItem} key={film.title}>
+                <Pressable onPress={() => navigate(SCREEN.FILM_DETAILS)}>
                   <Text style={styles.item}>{film.title}</Text>
                 </Pressable>
               </View>

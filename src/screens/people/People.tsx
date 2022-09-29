@@ -1,9 +1,10 @@
 import React from "react";
-import { ScrollView, Text, View } from "react-native";
+import { Pressable, ScrollView, Text, View } from "react-native";
 import { useFetchPeopleQuery } from "../../api/defaultAPI";
 import { useNavigation } from "@react-navigation/native";
 import Preloader from "../../components/preloader";
 import { styles } from "./styles";
+import { SCREEN } from "../../navigation/constants/screens";
 
 const People = () => {
   const navigation = useNavigation();
@@ -18,7 +19,9 @@ const People = () => {
           {people && people.results.map((person) => {
             return (
               <View style={styles.personItem} key={person.created}>
-                <Text style={styles.item}>{person.name}</Text>
+                <Pressable onPress={() => navigation?.navigate(SCREEN.PERSON_DETAILS)}>
+                  <Text style={styles.item}>{person.name}</Text>
+                </Pressable>
               </View>
             );
           })}

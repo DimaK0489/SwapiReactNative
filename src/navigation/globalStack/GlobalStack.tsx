@@ -4,8 +4,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Films from "../../screens/films";
 import People from "../../screens/people";
 import { SCREEN, screens } from "../constants/screens";
-import { Button } from "react-native";
-import { theme } from "../../styles/theme";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,25 +14,10 @@ const GlobalStack = () => {
         initialRouteName="Home Page"
         screenOptions={{ headerShown: true }}>
         <Stack.Screen name={SCREEN.HOME} component={screens[SCREEN.HOME]} />
-        <Stack.Screen name={"Films"} component={screens[SCREEN.FILMS]} options={() => ({
-          headerTitle: "Films",
-          headerRight: () => (
-            <Button
-              title={"Go to Home"}
-              color={theme.colors.green}
-            />
-          )
-        })} />
-        <Stack.Screen name={"People"} component={screens[SCREEN.PEOPLE]} options={() => ({
-          headerTitle: "People",
-          headerRight: () => (
-            <Button
-              title={"Go to Home"}
-              color={theme.colors.green}
-            />
-          )
-        })} />
+        <Stack.Screen name={"Films"} component={screens[SCREEN.FILMS]}/>
+        <Stack.Screen name={"People"} component={screens[SCREEN.PEOPLE]} />
         <Stack.Screen name={SCREEN.FILM_DETAILS} component={screens[SCREEN.FILM_DETAILS]} />
+        <Stack.Screen name={SCREEN.PERSON_DETAILS} component={screens[SCREEN.PERSON_DETAILS]} />
       </Stack.Navigator>
     </NavigationContainer>
   );
