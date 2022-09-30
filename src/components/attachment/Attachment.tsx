@@ -13,7 +13,7 @@ interface Props {
 const Attachment = ({data, nameButton, onClick, title}: Props) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.item}>{title}: {data}</Text>
+      <Text style={styles.item}>{title}: {data.name}</Text>
       <Button title={nameButton} onPress={() => onClick} />
     </SafeAreaView>
   );

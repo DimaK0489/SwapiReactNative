@@ -12,6 +12,12 @@ export const styles = StyleSheet.create({
     margin: 10,
     justifyContent: "center"
   },
+  info: {
+    fontSize: 50,
+    color: theme.colors.text,
+    paddingLeft: 50,
+    fontStyle: 'normal'
+  },
   item: {
     fontSize: 25,
     marginTop: 20,

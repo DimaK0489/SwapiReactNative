@@ -17,9 +17,10 @@ const People = () => {
         {error && <Text style={styles.error}> Error occurred </Text>}
         <View>
           {people && people.results.map((person) => {
+            const idUrl = person.url.slice(0,-1).split('/').pop();
             return (
               <View style={styles.personItem} key={person.created}>
-                <Pressable onPress={() => navigation?.navigate(SCREEN.PERSON_DETAILS)}>
+                <Pressable onPress={() => navigation?.navigate(SCREEN.PERSON_DETAILS, { id: idUrl })}>
                   <Text style={styles.item}>{person.name}</Text>
                 </Pressable>
               </View>

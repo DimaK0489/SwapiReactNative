@@ -18,9 +18,10 @@ const Films = () => {
         {error && <Text style={styles.error}> Error occurred </Text>}
         <View>
           {films && films.results.map((film) => {
+            const idUrl = film.url.slice(0, -1).split("/").pop();
             return (
               <View style={styles.filmItem} key={film.title}>
-                <Pressable onPress={() => navigate(SCREEN.FILM_DETAILS)}>
+                <Pressable onPress={() => navigate(SCREEN.FILM_DETAILS, { id: idUrl })}>
                   <Text style={styles.item}>{film.title}</Text>
                 </Pressable>
               </View>
