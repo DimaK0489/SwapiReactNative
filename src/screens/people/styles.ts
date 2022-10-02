@@ -5,12 +5,12 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    borderRadius: 10,
+    borderRadius: 10
   },
   item: {
     padding: 10,
     fontSize: 25,
-    marginTop: 5,
+    marginTop: 5
   },
   error: {
     fontSize: 30,
@@ -23,7 +23,12 @@ export const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     borderBottomLeftRadius: 20,
     margin: 5,
-    alignItems: 'center'
+    alignItems: "center"
+  },
+  pagination: {
+    flexDirection: "row-reverse",
+    justifyContent: "space-around",
+    padding: 20,
   }
 });
 

@@ -10,7 +10,7 @@ const People = () => {
   const navigation = useNavigation();
   const [page, setPage] = useState<any>(1)
   const { data: people, isLoading, error } = useFetchPeopleQuery(page);
-
+  console.log(page);
   return isLoading ? (
     <Preloader title={"Loading..."} />
   ) : (
@@ -28,7 +28,7 @@ const People = () => {
               </View>
             );
           })}
-          <View style={{flexDirection: 'row-reverse', justifyContent: 'space-around', padding: 20}}>
+          <View style={styles.pagination}>
             <Button title={"next"} onPress={() => setPage(page +1 )} disabled={page === 9}/>
             <Button title={"previous"} onPress={() => setPage(page -1)} disabled={page === 1}/>
           </View>
