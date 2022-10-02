@@ -20,8 +20,8 @@ export const homePageAPI = createApi({
       })
     }),
     fetchPeople: build.query<IPeople, string>({
-      query: () => ({
-        url: `/people`,
+      query: (page: string) => ({
+        url: `/people/?page=${page}`,
         method: "GET"
       })
     }),

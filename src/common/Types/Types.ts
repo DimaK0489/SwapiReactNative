@@ -1,7 +1,7 @@
 export interface IPeople {
   count: number,
   next: string,
-  previous: null,
+  previous: string,
   results: Array<PeopleResult>
 }
 

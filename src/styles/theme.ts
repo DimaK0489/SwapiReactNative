@@ -13,5 +13,6 @@ export const theme = {
     grey: '#797575',
     bgColor: '#fae9ae',
     fgColor: '#dd4d44',
+    yellow: '#c2fa1c',
   },
 };

@@ -1,20 +1,21 @@
 import React from "react";
-import { styles } from "../../screens/personDetails/styles";
-import { Button, Text } from "react-native";
+import { styles } from "./styles";
+import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 interface Props {
   title: string
   data: any,
-  nameButton: string,
-  onClick: () => void,
 }
 
-const Attachment = ({data, nameButton, onClick, title}: Props) => {
+const Attachment = ({title, data}: Props) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.item}>{title}: {data.name}</Text>
-      <Button title={nameButton} onPress={() => onClick} />
+      <Text style={styles.info}>{title}: {data.title}</Text>
+      <Text style={styles.item}>{title}: {data.director}</Text>
+      <Text style={styles.item}>{title}: {data.producer}</Text>
+      <Text style={styles.item}>{title}: {data as string}</Text>
+      <Text style={styles.item}>{title}: {data as string}</Text>
     </SafeAreaView>
   );
 };
